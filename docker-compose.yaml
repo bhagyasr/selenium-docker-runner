@@ -19,7 +19,7 @@ services:
     environment:
       - HUB_HOST=hub
   searchmodule:
-      image: bhagyan/selenium-docker:8
+      image: bhagyan/selenium-docker
       depends_on:
         - chrome
         - firefox
@@ -29,7 +29,7 @@ services:
       volumes:
         - ./search-moduleoutput:/bhagya/test/test-output
   bookflightmodule:
-      image: bhagyan/selenium-docker:8
+      image: bhagyan/selenium-docker
       depends_on:
         - chrome
         - firefox
