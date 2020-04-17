@@ -27,7 +27,7 @@ services:
         - host=hub
         - MODULE=searchmodule.xml
       volumes:
-        - ./search-moduleoutput:/bhagya/test/test-output
+        - ./output/search-moduleoutput:/bhagya/test/test-output
   bookflightmodule:
       image: bhagyan/selenium-docker
       depends_on:
@@ -38,4 +38,4 @@ services:
         - Browser=firefox
         - MODULE=bookFlightModule.xml
       volumes:
-        - ./bookFlight-moduleoutput:/bhagya/test/test-output
+        - ./output/bookFlight-moduleoutput:/bhagya/test/test-output
