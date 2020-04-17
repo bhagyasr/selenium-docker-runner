@@ -1,6 +1,11 @@
 pipeline{
 	agent any
 	    stages{
+		 stage("Pull Latest Image from docker hub"){
+	            steps{
+	               sh "docker pull bhagyan/selenium-docker:latest"
+	            }
+	        }
 	        stage("Start Grid"){
 	            steps{
 	               sh "docker-compose up -d hub hub chrome firefox"
@@ -12,10 +17,10 @@ pipeline{
 	            }
 	        }
 	    }
-	post {
+	 post{
 		always{
 			archiveArtifacts artifacts: 'output/**'
 			sh "docker-compose down"
 		}
-	}
+	    }
 }
